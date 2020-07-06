@@ -11,10 +11,16 @@ the source code is to the left, called loopwhile.py. let me (CJ) know if there a
 from loopwhile import Program
 
 program = """
-B=0
+
+P=0
+
 LOOP X
- X=B
- B=B+1
+P=P+1
+END
+
+X=X+1
+Z=0
+LOOP X
  LOOP Y
   A = 0
   LOOP X
@@ -22,15 +28,46 @@ LOOP X
    A = A+1
   END
  END
+
+ B=0
+ LOOP X
+  B=0
+  B=B+1
+ END
+
+ LOOP B
+  Z = Z+1
+ END
 END
+
+R=0
+LOOP Z
+ LOOP Y
+  R = R + 1
+ END
+END
+
+LOOP R
+ C = 0
+ LOOP P
+  P = C
+  C = C+1
+ END
+END
+
+Y=0
+LOOP P
+Y=Y+1
+END
+
 """
 
 inputs = {
-  "X": 80,
-  "Y": 9,
+  "X": 25,
+  "Y": 15,
 }
 
-output = "X"
+output = "P"
 
 prog = Program(program)
 print(prog.run(inputs, output))
