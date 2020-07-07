@@ -12,9 +12,16 @@ from loopwhile import Program
 
 program = """
 A=0
+B=0
 A=A+1
 LOOP X
  A=0
+ B=B+1
+END
+LOOP B
+ LOOP Y
+  B=B+1
+ END
 END
 LOOP A
  LOOP Y
