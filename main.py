@@ -11,83 +11,138 @@ the source code is to the left, called loopwhile.py. let me (CJ) know if there a
 from loopwhile import Program
 
 program = """
-N =0
-LOOP X
- N=N+1
-END
 
 Y=0
 Y=Y+1
-Y=Y+1
 
-X = X + 1
-Z = 0
+I=0
+J=0
 LOOP X
+ I=I+1
+ J=J+1
+END
+
+K=0
+S=0
+
+LOOP X
+ Y=Y+1
+
+ G=0
  LOOP Y
-  A = 0
-  LOOP X
-   X = A
-   A = A + 1
+  G=G+1
+ END 
+ G=G+1
+
+ LOOP I
+  H = 0
+  LOOP G
+   G = H
+   H = H + 1
   END
  END
  
- B = 0
- LOOP X
-  B = 0
-  B = B + 1
+ F=0
+ LOOP G
+  F=0
+  F=F+1
+ END
+
+
+ LOOP F
+  V = 0
+  V=V+1
+  LOOP V
+   H = 0
+   LOOP Y
+    Y = H
+    H = H + 1
+   END
+  END
  END
  
- LOOP B
-  Z = Z + 1
+ X=0
+ LOOP I
+  X=X+1
+ END
+
+ P = 0
+ 
+ LOOP X
+ P = P + 1
+ END
+ 
+ X = X + 1
+ Z = 0
+ LOOP X
+  LOOP Y
+   A = 0
+   LOOP X
+    X = A
+    A = A + 1
+   END
+  END
+ 
+  B = 0
+  LOOP X
+   B = 0
+   B = B + 1
+  END
+ 
+  LOOP B
+   Z = Z + 1
+  END
+ END 
+
+ R = 0
+ LOOP Z
+  LOOP Y
+   R = R + 1
+  END
+ END
+ 
+ LOOP R
+  C = 0
+  LOOP P
+   P = C
+   C = C + 1
+  END
+ END
+ 
+
+ S=0
+ LOOP P
+  S=0
+  S=S+1
+ END
+ 
+ LOOP S
+  K=K+1
  END
 END
 
-
-M=0
-LOOP Z
- M=M+1
- M=M+1
-END
-LOOP M
+LOOP K
  A = 0
- LOOP N
-  N = A
+ LOOP J
+  J = A
   A = A+1
  END
 END
 
-
-A = 0
-B=0
-A=A+1
-LOOP Z
- LOOP A
-  B=B+1
- END
- LOOP B
-  A=A+1
- END
+E=0
+LOOP J
+ E=0
+ E=E+1
 END
 
-R=0
-LOOP B
- R=R+1
-END
-
-LOOP N
- R=0
- LOOP A
-  R=R+1
- END
-END
 """
 
 inputs = {
-  "X": 0,
-  "Y": 15,
+  "X": 8,
+  "Y": 0,
 }
 
-output = "R"
+output = "E"
 
 prog = Program(program)
 print(prog.run(inputs, output))
